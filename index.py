@@ -121,23 +121,21 @@ data = pd.DataFrame({
 st.bar_chart(data)
 
 # Aprensentando resultado final
-if vitoria == 0 and derrota == 0 and empate == 0:
+if vitoria == 0 and derrota == 0 and empate == 0: #invalido
     st.subheader("Nesse cenário, nao podemos prever (sem experiencias com essa porcentagem de posse de bola)")
-elif vitoria > derrota and vitoria == empate:
+elif vitoria > derrota and vitoria == empate: # vitoria == empate > derrota
     st.subheader("Nesse cenário, seu time provavelmente ganharia ou empataria")
-elif derrota > vitoria and derrota == empate:
+elif derrota > vitoria and derrota == empate: #  derrota == empate > vitoria
     st.subheader("Nesse cenário, seu time provavelmente perderia ou empataria")
-elif empate > vitoria and empate > derrota:
+elif derrota == vitoria and derrota > empate: # vitoria == derrota > empate 
+    st.subheader("Nesse cenário, seu time pode possuir ambos resultados (vitória ou derrota)")
+elif empate > vitoria and empate > derrota: # empate > vitoria e derrota
     st.subheader("Nesse cenário, seu time provavelmente empataria")
-elif vitoria > empate and vitoria > derrota:
+elif vitoria > empate and vitoria > derrota: # vitoria > empate e derrota
     st.subheader("Nesse cenário, seu time provavelmente ganharia")
-elif derrota > empate and derrota > vitoria:
+elif derrota > empate and derrota > vitoria: # derrota > empate e vitoria
     st.subheader("Nesse cenário, seu time provavelmente perderia")
-elif derrota == empate and derrota == vitoria:
+elif derrota == empate and derrota == vitoria: # derrota == empate == vitoria
     st.subheader("Nesse cenário, seu time pode tanto ganhar, empatar ou perder")
 else:
     st.write('Erro3')
-
-
-
-
